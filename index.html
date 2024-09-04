@@ -14,7 +14,9 @@
       column-count: 6;
       column-gap: 10px;
     }
+
     .card {
+      position: relative;
       break-inside: avoid;
       background-color: white;
       margin-bottom: 10px;
@@ -25,10 +27,22 @@
       transition: all 0.3s ease;
       display: inline-block;
       width: 100%;
+      border: 2px solid transparent; /* 기본 테두리 투명 */
     }
     .card.expanded {
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+      border: 2px solid red; /* 확장된 카드 테두리 색상을 빨간색으로 변경 */
+      animation: blinkBorder 1s infinite; /* 깜빡임 효과 */
     }
+
+    /* 깜빡이는 테두리 효과 */
+    @keyframes blinkBorder {
+      0%, 100% { border-color: red; } /* 테두리 색상을 빨간색으로 설정 */
+      50% { border-color: transparent; } /* 깜빡일 때 테두리 투명 */
+    }
+
+
     .card img {
       width: 100%;
       height: auto;
@@ -95,6 +109,15 @@
     }
   </style></head><body><div class="container">
       <div id="card-0" class="card" onclick="toggleCard(0)">
+        <img src="https://coresos-phinf.pstatic.net/a/377j8c/6_0feUd018svcbzwnj0wdi1dl_er59jq.jpg">
+        <p class="excerpt">★10 1박2일★<br>월~목 299,000<br>금토 359,000<br>토일 399,000<br>일월 329,000<br>*휴가철 별도문의<br>🚗부산에서 2시간30분<br>...</p>
+        <div class="card-content">
+          <p>★10 1박2일★<br>월~목 299,000<br>금토 359,000<br>토일 399,000<br>일월 329,000<br>*휴가철 별도문의<br>🚗부산에서 2시간30분<br>🚗서울에서 2시간30분<br>딱 중간에서 라운딩 가능한 남안동CC<br>포함사항: 양일그린피, 숙박, 클럽조식<br>불포함 사항: 카트비, 캐디피, 일정외식사<br>✔그 외 궁금한 사항은 여행사로 문의바랍니다.<br>골프 담당 : ☎ 070-8656-1208 박설희팀장<br>[디오픈카톡 실시간 상담&amp;예약]<br>http://pf.kakao.com/_kUTxej/chat</p>
+          
+        </div>
+      </div>
+    
+      <div id="card-1" class="card" onclick="toggleCard(1)">
         <img src="https://coresos-phinf.pstatic.net/a/377jhc/b_aciUd018svc16mi60907sj1c_s41h12.jpg">
         <p class="excerpt">💙필리핀의 때묻지 않은 낙원, 보홀💙<br>최저가도전❗❗ 399,000원~<br>9월 ~ 3월까지 특가 이벤트 중😎😎<br>프라이빗 비치가 있는 솔레아 리조트 부터<br>보...</p>
         <div class="card-content">
@@ -103,7 +126,7 @@
         </div>
       </div>
     
-      <div id="card-1" class="card" onclick="toggleCard(1)">
+      <div id="card-2" class="card" onclick="toggleCard(2)">
         <img src="https://coresos-phinf.pstatic.net/a/377jji/3_gcjUd018svc189gihvdp4a35_qufiuo.jpg">
         <p class="excerpt">여름부터 겨울까지 만나는 💟보홀💟<br>NEW❣❣ 노쇼핑 + 22시 레이트 체크아웃 상품<br>✨ 노쇼핑으로 부담없이<br>레이트 체크아웃으로 여유롭게💨<br>최저가 799,...</p>
         <div class="card-content">
@@ -112,7 +135,7 @@
         </div>
       </div>
     
-      <div id="card-2" class="card" onclick="toggleCard(2)">
+      <div id="card-3" class="card" onclick="toggleCard(3)">
         <img src="https://coresos-phinf.pstatic.net/a/377jjj/a_j9jUd018svc2u7v3e8anfti_hgzymg.jpg">
         <p class="excerpt">✈️마쓰야마 4박5일 왕복항공권<br>🚀KTX보다 싸다! 우주최강초특가!<br>🎁주 6회 증편 기념 大이벤트🎁<br>💝10월 25일 금요일 딱 하루!<br>🎀부산출발 왕복...</p>
         <div class="card-content">
@@ -121,7 +144,7 @@
         </div>
       </div>
     
-      <div id="card-3" class="card" onclick="toggleCard(3)">
+      <div id="card-4" class="card" onclick="toggleCard(4)">
         <img src="https://coresos-phinf.pstatic.net/a/37682d/5_9edUd018svc71pm6izhcmrg_s41h12.jpg">
         <p class="excerpt">💙올여름 가장 시원한 홋카이도 여름 골프💙<br>⛳여름 골프 여행 선호도 1위!! 청량~한 삿포로 시내 골프<br>9월출발 단 하루 초특가 이벤트❤️❤️❤️<br>&gt;&gt...</p>
         <div class="card-content">
@@ -130,7 +153,7 @@
         </div>
       </div>
     
-      <div id="card-4" class="card" onclick="toggleCard(4)">
+      <div id="card-5" class="card" onclick="toggleCard(5)">
         <img src="https://coresos-phinf.pstatic.net/a/376jhe/c_7f1Ud018svcqucuy8v7nwd8_svko92.jpg">
         <p class="excerpt">🎉 "9월~2월 세부 리조트별 상품!!" 🎉<br>✨호텔식 1회제공 프로모션!!(사보이/벨몬트/솔레어) ✨<br>🎁신상 특급리조트! 두짓타니, 쉐라톤🎁<br>💫여행의 퀄리...</p>
         <div class="card-content">
@@ -139,7 +162,7 @@
         </div>
       </div>
     
-      <div id="card-5" class="card" onclick="toggleCard(5)">
+      <div id="card-6" class="card" onclick="toggleCard(6)">
         <img src="https://coresos-phinf.pstatic.net/a/377iha/f_gbdUd018svckg8epzt42f32_c5zb58.jpg">
         <p class="excerpt">ISLAND of GODS, 발리<br>10월 30일 취항 확정!!!!!!<br>🔥취항기념 스페셜 특가🔥<br>10월 30일 (수) - 4박 6일 <br>11월 01일 (금) ...</p>
         <div class="card-content">
@@ -148,7 +171,7 @@
         </div>
       </div>
     
-      <div id="card-6" class="card" onclick="toggleCard(6)">
+      <div id="card-7" class="card" onclick="toggleCard(7)">
         <img src="https://coresos-phinf.pstatic.net/a/377h30/8_132Ud018svc19m3zd536hj09_1i09l9.jpg">
         <p class="excerpt">💙오션블루, 끝없이 펼쳐진 바다 <br>❤️키친에서 풍겨오는 향긋한 음식들<br>🧡나를 감싸는 따뜻한 햇살들<br>💛와서 온천욕과 함께 오키나와를 즐기세요~~<br>✨11월~...</p>
         <div class="card-content">
@@ -157,7 +180,7 @@
         </div>
       </div>
     
-      <div id="card-7" class="card" onclick="toggleCard(7)">
+      <div id="card-8" class="card" onclick="toggleCard(8)">
         <img src="https://coresos-phinf.pstatic.net/a/371j00/a_2g0Ud018svc1xoud4vhdo8lm_s41h12.jpg">
         <p class="excerpt">✨마쓰야마 시내 품격 골프 3박4일 54H✨<br>📆 단 네 날짜 특가! 선착순 8명 한정!!<br>10/7(월)  1,149,000 ▶ 999,000원<br>10/10(목)  ...</p>
         <div class="card-content">
@@ -166,7 +189,7 @@
         </div>
       </div>
     
-      <div id="card-8" class="card" onclick="toggleCard(8)">
+      <div id="card-9" class="card" onclick="toggleCard(9)">
         <img src="https://coresos-phinf.pstatic.net/a/3763ec/7_8b6Ud018svcd8dqjy6728mq_c5zb58.jpg">
         <p class="excerpt">베트남 여행 NO.1다낭🌟<br>💥💥9월 - 12월 SOPT 특가 💥💥<br>발권 : 9월 23일 발권 조건 <br>💓노팁+노옵션 시리즈 3컬러💓<br>레드 &amp;...</p>
         <div class="card-content">
@@ -175,7 +198,7 @@
         </div>
       </div>
     
-      <div id="card-9" class="card" onclick="toggleCard(9)">
+      <div id="card-10" class="card" onclick="toggleCard(10)">
         <img src="https://coresos-phinf.pstatic.net/a/376ed8/i_22cUd018svcmx3xvc5wafzx_vr5lal.jpg">
         <p class="excerpt">🎉!파타야 씨투풀빌라! 699특가!🎉<br>🔥여행가기 딱 좋은 11월🔥<br>풀빌라에서 프라이빗한 여행 <br>🌊부산에서 볼 수 없던 파타야 씨투풀빌라 PKG🌊<br> ...</p>
         <div class="card-content">
@@ -184,7 +207,7 @@
         </div>
       </div>
     
-      <div id="card-10" class="card" onclick="toggleCard(10)">
+      <div id="card-11" class="card" onclick="toggleCard(11)">
         <img src="https://coresos-phinf.pstatic.net/a/377jgg/3_iajUd018svc35yrdqpjkan9_1wyq1t.jpg">
         <p class="excerpt">💛북경+장가계 패키지💛<br>중국 역사의 중심 북경과<br>천하절경 장가계의 만남🤗<br>도시 전체가 박물관이라 해도 좋을 만큼<br>발길 닿는 곳 , 눈길 닿는 곳마다<br...</p>
         <div class="card-content">
@@ -193,7 +216,7 @@
         </div>
       </div>
     
-      <div id="card-11" class="card" onclick="toggleCard(11)">
+      <div id="card-12" class="card" onclick="toggleCard(12)">
         <img src="https://coresos-phinf.pstatic.net/a/377ji0/j_7acUd018svczqbj15q5psvf_rydbxb.gif">
         <p class="excerpt">💘오사카, 역대급 초!특!가! <br>9월 11일, 단 하루 진행합니다. <br>처음이자 마지막! 두 번 다시는 없을 초특가입니다. <br>빠르게 마감됩니다. 예약 서둘러 주세요...</p>
         <div class="card-content">
@@ -202,7 +225,7 @@
         </div>
       </div>
     
-      <div id="card-12" class="card" onclick="toggleCard(12)">
+      <div id="card-13" class="card" onclick="toggleCard(13)">
         <img src="https://coresos-phinf.pstatic.net/a/377j3g/e_cacUd018svc1u1ezy3i1kat1_1i09l9.jpg">
         <p class="excerpt">숙소 근처 이자카야,쇼핑센터,드럭스토어 등<br>즐길거리가 풍성한 시내숙박!!<br>💜추석 긴급 특가!💜<br>🧡대마도+시내숙박 +뷰호텔 2인실 무료 업그레이드🧡<br>🎁...</p>
         <div class="card-content">
@@ -211,7 +234,7 @@
         </div>
       </div>
     
-      <div id="card-13" class="card" onclick="toggleCard(13)">
+      <div id="card-14" class="card" onclick="toggleCard(14)">
         <img src="https://coresos-phinf.pstatic.net/a/377g0d/3_4i0Ud018svc18n7npuphvhwu_s41h12.jpg">
         <p class="excerpt">✈에어부산 동남아 9월 항공온리✈<br>📅 2024.09~2025.03<br>9월 발권 한정 동남아 선발 특가입니다.<br>많은 문의 부탁드립니다.<br>🌟 유류 및 텍스, 발...</p>
         <div class="card-content">
@@ -220,7 +243,7 @@
         </div>
       </div>
     
-      <div id="card-14" class="card" onclick="toggleCard(14)">
+      <div id="card-15" class="card" onclick="toggleCard(15)">
         <img src="https://coresos-phinf.pstatic.net/a/377jfi/1_ha8Ud018svc18r15kjyp9wep_1nu7wh.jpg">
         <p class="excerpt">이보다 더 저렴할 순 없다! 예약마감 직전⏰<br>최저가 보장🤙 149,000원 하이난🔥<br>뜨거운 반응 동양의 하와이🏖<br>지금은 일단 예약을 해야할 때!<br>📛잔여...</p>
         <div class="card-content">
@@ -229,7 +252,7 @@
         </div>
       </div>
     
-      <div id="card-15" class="card" onclick="toggleCard(15)">
+      <div id="card-16" class="card" onclick="toggleCard(16)">
         <img src="https://coresos-phinf.pstatic.net/a/377j61/j_1a2Ud018svck25a272htzyo_1h5qah.png">
         <p class="excerpt">📢 9월 ~ 2025년3월   방콕파타야  패키지 📢<br>  👍 9월 마지막특가부터  ~내년 3월까지  출발 특가 혜택!<br>  👍 재방문 1등  휴양지 베스트셀러!!!...</p>
         <div class="card-content">
@@ -238,7 +261,7 @@
         </div>
       </div>
     
-      <div id="card-16" class="card" onclick="toggleCard(16)">
+      <div id="card-17" class="card" onclick="toggleCard(17)">
         <img src="https://coresos-phinf.pstatic.net/a/377ga6/6_0i0Ud018svc1gybhpf7k4wuc_rydbxb.jpg">
         <p class="excerpt">여름 휴가 아직 못 가신 분들을 위한 9월 스팟 초특가!<br>🎁9/22(일)  =&gt; 599,000원 <br>🎁9/20(금), 9/21(토) =&gt; 629,000원 <...</p>
         <div class="card-content">
@@ -247,7 +270,7 @@
         </div>
       </div>
     
-      <div id="card-17" class="card" onclick="toggleCard(17)">
+      <div id="card-18" class="card" onclick="toggleCard(18)">
         <img src="https://coresos-phinf.pstatic.net/a/377jg1/d_1a5Ud018svc1ghqgvm32afea_qnd77x.jpg">
         <p class="excerpt">선선한 가을이 찾아온 지금! ♨온천이 생각날 때<br>후쿠오카 BEST 1위상품,<br>♨료칸 1박 + 시내1박, 여유로운 관광부터 온천까지!!<br>🔥10월 주말 좌석 마감임박...</p>
         <div class="card-content">
@@ -256,7 +279,7 @@
         </div>
       </div>
     
-      <div id="card-18" class="card" onclick="toggleCard(18)">
+      <div id="card-19" class="card" onclick="toggleCard(19)">
         <img src="https://coresos-phinf.pstatic.net/a/371i59/2_485Ud018svcvo6vhwiuewgf_f5vh1y.jpg">
         <p class="excerpt">[NOMAD TOUR]<br>몽골의 알프스, 몽골의 푸른 진주<br>어머니의 바다 홉스골[4명 이상 출발 ]<br>홉스골 호수 : 몽골에서 두번째로 큰 호수이며, 담수호 중에서는 ...</p>
         <div class="card-content">
@@ -265,7 +288,7 @@
         </div>
       </div>
     
-      <div id="card-19" class="card" onclick="toggleCard(19)">
+      <div id="card-20" class="card" onclick="toggleCard(20)">
         <img src="https://coresos-phinf.pstatic.net/a/377h74/7_536Ud018svc1vxnbec5kypmm_qufcz1.jpg">
         <p class="excerpt">😎액티비티와 관광, 다 잡았다! 라오스! 😎<br>🎉9월선발 패키지 OPEN🎉<br>💖자연을 간직하고 있는 힐링나라 라오스💖<br>📍라오스의 역사와 문화를 볼수있는 비...</p>
         <div class="card-content">
@@ -274,7 +297,7 @@
         </div>
       </div>
     
-      <div id="card-20" class="card" onclick="toggleCard(20)">
+      <div id="card-21" class="card" onclick="toggleCard(21)">
         <img src="https://coresos-phinf.pstatic.net/a/377icf/d_b9aUd018svcfzgudwcwx7yp_hgzymg.jpg">
         <p class="excerpt">📢북해도 싸게 가고싶으신 분!!<br>혜택이 팡팡!! 대박할인+대박특전<br>🔥초 저 가 ! 완 판 챌 린 지 🔥<br>힐링BA팩(온천3박) 초초초특가<br>⭐9/20(금) ...</p>
         <div class="card-content">
@@ -283,7 +306,7 @@
         </div>
       </div>
     
-      <div id="card-21" class="card" onclick="toggleCard(21)">
+      <div id="card-22" class="card" onclick="toggleCard(22)">
         <img src="https://coresos-phinf.pstatic.net/a/376j60/9_246Ud018svc19qg016boxob1_f5vh1y.jpg">
         <p class="excerpt">🚩북경-태항산 9월 한달만의 특가🚩<br>북경의 숨겨진 보물 태항산을 만나보세요!<br>✈중국 1등 항공사CA, 중국을 대표하는 플래그 캐리어CA<br>편안함과 신뢰를 제공하는...</p>
         <div class="card-content">
@@ -292,7 +315,7 @@
         </div>
       </div>
     
-      <div id="card-22" class="card" onclick="toggleCard(22)">
+      <div id="card-23" class="card" onclick="toggleCard(23)">
         <img src="https://coresos-phinf.pstatic.net/a/375cdi/h_dd2Ud018svcykuv56t3096y_bbtiv2.jpg">
         <p class="excerpt">🚄열차타고 떠나는 마카오 + 계림<br>10월출발 5박7일상품 <br>10월 15,29 - 699,000<br>✈LCC 국적기 1위 에어부산 타고 마카오~<br>🚅그리고 한국인...</p>
         <div class="card-content">
@@ -301,21 +324,12 @@
         </div>
       </div>
     
-      <div id="card-23" class="card" onclick="toggleCard(23)">
+      <div id="card-24" class="card" onclick="toggleCard(24)">
         <img src="https://coresos-phinf.pstatic.net/a/377ihi/h_eh9Ud018svcm0qxvn9jk7zb_f5vh1y.jpg">
         <p class="excerpt">🚀중국 북경 대특가 요금🚀<br>🀄연/금/원/명/청나라,중화민국의 수도 베이징<br>🀄중국 역사와 문화의 중심 베이징<br>🀄현대 중국 정치권력의 핵심지역 베이징<br>도...</p>
         <div class="card-content">
           <p>🚀중국 북경 대특가 요금🚀<br>🀄연/금/원/명/청나라,중화민국의 수도 베이징<br>🀄중국 역사와 문화의 중심 베이징<br>🀄현대 중국 정치권력의 핵심지역 베이징<br>도시 전체가 박물관이라 해도 좋을 만큼<br>발길 닿는 곳 , 눈길 닿는 곳마다<br>중국의 역사, 문화, 아름다움을 느끼실 수 있는 북경입니다<br>* 북경을 경유하여 중국 내륙을 관광하는 다양한 상품들도 문의 주세요 *<br>9월 21일 북경 -집중모객중<br>담당 :윤서영<br>070-8656-1228<br>[카카오톡 1:1상담]<br>http://pf.kakao.com/_ucxkld/chat</p>
           <img src="https://coresos-phinf.pstatic.net/a/377b65/h_fi3Ud018svc1lhbw345l6thk_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ia8/h_gh9Ud018svc8v6gube42ahv_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377i76/h_fh9Ud018svcvxs5r2ex769x_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377i5d/h_hh9Ud018svcxdpsp9pkehoc_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377i26/h_ih9Ud018svc9covt9g5mmaq_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ic9/h_ih9Ud018svc1cnz26dn7zhyv_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ia5/h_jh9Ud018svc16azbx3jcx2cj_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ic7/h_jh9Ud018svc18obzunpngp2a_f5vh1y.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ihc/i_0h9Ud018svc1skc516nisxxv_f5vh1y.jpg" alt="Post image">
-        </div>
-      </div>
-    
-      <div id="card-24" class="card" onclick="toggleCard(24)">
-        <img src="https://coresos-phinf.pstatic.net/a/377i08/h_9d0Ud018svcg5yg5m72fcae_1wyq1t.jpg">
-        <p class="excerpt">🎁12월 장가계 얼리버드 대특전🎁<br>미리미리 준비하는 겨울 장가계☃<br>12월 출발 상품 예약시<br>💛공부가주(또는 밀주고량)+장가계 특산품 매차 룸당 1개 증정💛<...</p>
-        <div class="card-content">
-          <p>🎁12월 장가계 얼리버드 대특전🎁<br>미리미리 준비하는 겨울 장가계☃<br>12월 출발 상품 예약시<br>💛공부가주(또는 밀주고량)+장가계 특산품 매차 룸당 1개 증정💛<br>👉9월 20일까지 예약조건!!<br>🚨9월 25일까지 항공권 발권조건!!<br>한국인이 사랑하는 1등 관광지👍<br>영원한 베스트셀러<br>사계절 언제나 아름다운 장가계 여행<br>지금 바로 떠나보세요.<br>📢6명부터 출발확정!!<br>📢편안한 국적기 에어부산 직항으로 경유 없이 장가계 이동!<br>📢5대특식 맛있는 여행!<br>📢전일정 리무진 버스 이용 (8명미만시 일반차량 이용)<br>📢전문적인 가이드님과 함께하는 즐거운 여행!<br>담당: 투어폰 이주애<br>직통번호: 070-8656-0542<br>채팅바로가기 http://pf.kakao.com/_ucxkld/chat</p>
-          <img src="https://coresos-phinf.pstatic.net/a/377i75/h_ad0Ud018svcl2sy2s77yk7s_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377iie/h_bd0Ud018svcry0heddre6os_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377i7a/h_dd0Ud018svc1rah1n1jotrlr_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ih7/h_ed0Ud018svc1fnkneu84m1x1_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ibg/0_ad1Ud018svc11k2xij9xu83c_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377i50/0_id1Ud018svc34gy82bzyi3m_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ic7/1_3d1Ud018svceo0uyeixga54_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377ide/1_ad1Ud018svc1r1kf6off6ixe_1wyq1t.jpg" alt="Post image"><img src="https://coresos-phinf.pstatic.net/a/377i7e/1_ed1Ud018svcmytsxvoxg1ar_1wyq1t.jpg" alt="Post image">
         </div>
       </div>
     
@@ -641,16 +655,25 @@
       
       if (currentOpenCard && currentOpenCard !== clickedCard) {
         currentOpenCard.classList.remove('expanded');
+        currentOpenCard.style.border = 'none'; // 이전 카드 테두리 제거
+        currentOpenCard.style.animation = 'none'; // 깜빡임 효과 제거
       }
       
       clickedCard.classList.toggle('expanded');
       
       if (clickedCard.classList.contains('expanded')) {
         currentOpenCard = clickedCard;
+        clickedCard.style.border = '2px solid #4CAF50'; // 현재 카드 테두리 추가
+        clickedCard.style.animation = 'blinkBorder 1s infinite'; // 깜빡임 효과 추가
+
         setTimeout(() => {
-          clickedCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // 카드의 상단 끝선에 맞추어 스크롤
+          const cardPosition = clickedCard.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: cardPosition - 10, behavior: 'smooth' }); // -10으로 여유 공간 추가
         }, 300); // 카드가 펼쳐진 후에 스크롤
       } else {
+        clickedCard.style.border = 'none'; // 카드 축소 시 테두리 제거
+        clickedCard.style.animation = 'none'; // 카드 축소 시 깜빡임 효과 제거
         currentOpenCard = null;
       }
     }
